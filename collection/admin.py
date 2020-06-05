@@ -5,16 +5,13 @@ from . import models
 admin.site.site_header="WareHouse Admin"
 
 class ItemAdmin(admin.ModelAdmin):    
-    list_display=('name','RetailPrice','WholeSalePrice','LeftOver')
+    list_display=('name','RetailPrice','WholeSalePrice')
     search_fields=('name',)
     def RetailPrice(self,obj):
         return "Rs{}".format(obj.rprice)
 
     def WholeSalePrice(self,obj):
         return "Rs{}".format(obj.wprice)
-
-    def LeftOver(self,obj):
-        return "{}{}".format(obj.leftover,obj.unit)
 
 
 admin.site.register(models.Item,ItemAdmin)
