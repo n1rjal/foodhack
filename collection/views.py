@@ -6,7 +6,7 @@ from . import serializers
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-import requests,json
+import requests
 
 #python functions here
 
